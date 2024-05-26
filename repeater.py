@@ -4,7 +4,7 @@ import assemblyai as aai
 import csv
 
 # assign directory
-directory = 'NotDone'
+directory = 'ToDo'
 aai.settings.api_key = ""
 
 # iterate over files in
@@ -31,6 +31,6 @@ for filename in os.listdir(directory):
         for utterance in transcript.utterances:
             curr += f"Speaker {utterance.speaker}: {utterance.text}"
 
-    with open('newestdata.csv', 'a') as file:
+    with open('transcriptions.csv', 'a') as file:
          writer = csv.writer(file)
          writer.writerow(["name", "name", f, curr])
